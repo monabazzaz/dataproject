@@ -1,0 +1,291 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Global Alcohol Consumption</title>
+
+        <link rel="stylesheet" href="css/styles.css" type="text/css">
+        <link rel="stylesheet" href="css/style.css" type="text/css">
+        <link rel="stylesheet" href="css/ammap.css" type="text/css">
+        <link rel="stylesheet" href="css/c3.css"  type="text/css">
+        <link href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" rel="stylesheet">
+        <link href="https://cdn.datatables.net/responsive/2.1.0/css/responsive.dataTables.min.css" rel="stylesheet">
+        <script src="js/ammap.js" type="text/javascript"></script>
+        <!-- map file should be included after ammap.js -->
+		    <script src="maps/js/worldLow.js" type="text/javascript"></script>
+        <script src="themes/light.js"></script>
+
+        <!-- Bootstrap core CSS -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+        <script>
+			    AmCharts.makeChart("mapdiv", {
+				  type: "map",
+				  colorSteps: 15,
+
+				dataProvider: {
+					map: "worldLow",
+					areas: [ {
+            "id": "AU",
+            "value": 9.7
+          }, {
+            "id": "AT",
+            "value": 11.8
+          }, {
+            "id": "BE",
+            "value": 11.8
+          }, {
+            "id": "CA",
+            "value": 8.2
+          }, {
+            "id": "CZ",
+            "value": 11.5
+          }, {
+            "id": "DK",
+            "value": 9.4
+          }, {
+            "id": "EE",
+            "value": 11.8
+          }, {
+            "id": "ES",
+            "value": 9.3
+          }, {
+            "id": "FI",
+            "value": 9.1
+          },{
+            "id": "FR",
+            "value": 11.1
+          }, {
+            "id": "GR",
+            "value": 7.5
+          }, {
+            "id": "HU",
+            "value": 10.6
+          }, {
+            "id": "IE",
+            "value": 10.6
+          },{
+            "id": "IS",
+            "value": 7.3
+          }, {
+            "id": "IT",
+            "value": 7.4
+          },  {
+            "id": "JP",
+            "value": 7.4
+          }, {
+            "id": "KP",
+            "value": 8.7
+          }, {
+            "id": "LT",
+            "value": 14.3
+          }, {
+            "id": "LU",
+            "value": 11
+          }, {
+            "id": "LV",
+            "value": 10.4
+          }, {
+            "id": "MX",
+            "value": 5.3
+          }, {
+            "id": "NL",
+            "value": 8.7
+          }, {
+            "id": "NZ",
+            "value": 9.2
+          }, {
+            "id": "NO",
+            "value": 6.3
+          }, {
+            "id": "PL",
+            "value": 10.8
+          }, {
+            "id": "PT",
+            "value": 10
+          }, {
+            "id": "RU",
+            "value": 14.2
+          }, {
+            "id": "SI",
+            "value": 9.5
+          }, {
+            "id": "SK",
+            "value": 9.9
+          }, {
+            "id": "SE",
+            "value": 7.3
+          }, {
+            "id": "CH",
+            "value": 9.9
+          }, {
+            "id": "TR",
+            "value": 1.4
+          }, {
+            "id": "GB",
+            "value": 9.4
+          }, {
+            "id": "US",
+            "value": 8.9
+          }
+]},
+
+
+        areasSettings: {
+          autoZoom: false,
+          color:"#BFD7E2",
+          colorSolid:"#2B6D91",
+      },
+
+				valueLegend: {
+					right: 15,
+					minValue: "1.4 Liters",
+					maxValue: "14.3 Liters"
+				}
+
+});
+		</script>
+    </head>
+
+    <body>
+
+      <div class="container-fluid">
+
+        <div class="row">
+            <h1>GL<img src="images/globe.png"></img>BAL ALCOHOL CONSUMPTION</h1>
+        </div>
+
+        <div class="row">
+          <div class="col-md-2"></div>
+          <div class="col-md-8">
+            <h3>Annual alcohol consumption has been tracked in approximately 40 countries over the past five decades. The Organization for Economic Co-operation and Development defines alcohol consumption as annual sales of pure alcohol in liters per person ages 15 and older.</h3>
+          </div>
+          <div class="col-md-2"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+              <p>The map below represents alcohol consumption in the year 2013 for the 34 nations in which data was collected. The darker the color of a nation, the greater the liters per capita.</p>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+
+        <div id="mapdiv" style="width: 100%; background-color:#ffffff; height: 500px;"></div>
+          <br>
+          <hr>
+          <br>
+        <div class="row">
+          <div class="col-md-4">
+            <div id="countries"style="width: 100%; background-color:#95bdd0; height: 350px;">
+              <h3>COUNTRIES</h3>
+              <p>Click on the name of a country below to see a line graph representing their alcohol consumption over the past 50+ years</p>
+              <table id="countries-list" class="display responsive nowrap" cellspacing="0" width="100%">
+                <tr>
+                  <td>Australia</td>
+                  <td>Austria</td>
+                  <td>Belgium</td>
+                  <td>Brazil</td>
+                </tr>
+                <tr>
+                  <td>Canada</td>
+                  <td>Chile</td>
+                  <td>China</td>
+                  <td>Colombia</td>
+                </tr>
+                <tr>
+                  <td>Costa Rica</td>
+                  <td>Czech Republic</td>
+                  <td>Denmark</td>
+                  <td>Estonia</td>
+                </tr>
+                <tr>
+                  <td>Finland</td>
+                  <td>France</td>
+                  <td>Germany</td>
+                  <td>Greece</td>
+                </tr>
+                <tr>
+                  <td>Hungary</td>
+                  <td>Iceland</td>
+                  <td>India</td>
+                  <td>Indonesia</td>
+                </tr>
+                <tr>
+                  <td>Ireland</td>
+                  <td>Italy</td>
+                  <td>Japan</td>
+                  <td>Korea</td>
+                </tr>
+                <tr>
+                  <td>Latvia</td>
+                  <td>Lithuania</td>
+                  <td>Luxembourg</td>
+                  <td>Mexico</td>
+                </tr>
+                <tr>
+                  <td>Netherlands</td>
+                  <td>New Zealand</td>
+                  <td>Norway</td>
+                  <td>Poland</td>
+                </tr>
+                <tr>
+                  <td>Portugal</td>
+                  <td>Russia</td>
+                  <td>Slovak Republic</td>
+                  <td>Slovenia</td>
+                </tr>
+                <tr>
+                  <td>South Africa</td>
+                  <td>Spain</td>
+                  <td>Sweden</td>
+                  <td>Switzerland</td>
+                </tr>
+                <tr>
+                  <td>Turkey</td>
+                  <td>United Kingdom</td>
+                  <td>United States</td>
+                  <td>Lithuania</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <h2>#countryname</h2>
+            <div id="chart"></div>
+          </div>
+        </div>
+
+          <br>
+          <br>
+
+        <table id="ammount" class="display responsive nowrap" cellspacing="0" width="100%">
+            <thead>
+                <tr>
+                    <th>Country</th>
+                    <th>Substance</th>
+                    <th>Age Range</th>
+                    <th>Liters per Capita</th>
+                    <th>Year</th>
+                </tr>
+            </thead>
+        </table>
+      </div>
+
+    </body>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.1.0/js/dataTables.responsive.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/d3.min.js" charset="utf-8"></script>
+    <script src="js/c3.min.js" charset="utf-8"></script>
+    <script src="js/scripts.js"></script>
+
+
+</html>

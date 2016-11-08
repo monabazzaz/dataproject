@@ -1,0 +1,38 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:300);
+
+body {
+	background-color: #FFFFFF;
+	margin-left: 32px;
+	margin-top: 20px;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	font-family: "Lato", Arial;
+	font-size: 14px;
+	line-height:16px;
+}
+
+#ammount hr{
+   border: 1px solid #FFFFFF;
+}
+
+#ammount a:link{
+	color:#0055CC;
+}
+#ammount a:visited{
+		color:#990099;
+}
+#ammount a:hover{
+		color:#CC0000;
+}
+
+#ammount th{
+	background-color:#2B6D91;
+ 	font-weight:bold;
+	color: white;
+	text-align: center;
+}
+
+#ammount td{
+	background-color:#ecf7fe;
+ 	text-align:center;
+}
